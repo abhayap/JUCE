@@ -855,7 +855,7 @@ protected:
             }
             else
             {
-                props.add (new TextPropertyComponent (macOSBaseSDK, "macOS Base SDK", 8, false),
+                props.add (new TextPropertyComponent (macOSBaseSDK, "macOS Base SDK", 9, false),
                            "The version of the macOS SDK to link against." + sdkInfoString + "10.11.");
 
                 props.add (new TextPropertyComponent (macOSDeploymentTarget, "macOS Deployment Target", 8, false),
@@ -2577,6 +2577,7 @@ private:
         s.set ("CLANG_WARN__DUPLICATE_METHOD_MATCH", "YES");
         s.set ("WARNING_CFLAGS", "\"-Wreorder\"");
         s.set ("GCC_INLINES_ARE_PRIVATE_EXTERN", projectType.isStaticLibrary() ? "NO" : "YES");
+        s.set ("TOOLCHAINS", "default");
 
         // GCC_SYMBOLS_PRIVATE_EXTERN only takes effect if ENABLE_TESTABILITY is off
         s.set ("ENABLE_TESTABILITY", "NO");
